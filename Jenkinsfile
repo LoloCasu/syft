@@ -104,6 +104,7 @@ pipeline {
       archiveArtifacts artifacts: '*.spdx.json'
       // delete the images locally
       sh 'docker image rm ${REPOSITORY}:${BUILD_NUMBER} ${REPOSITORY}:prod || failure=1'
+      provenanceRecorder targetDirectory: 'build/slsa'
     } // end always
   } //end post
       
