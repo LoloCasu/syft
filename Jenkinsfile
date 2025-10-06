@@ -33,7 +33,7 @@ pipeline {
         sh """
           which docker
           which curl
-          which jq
+          // which jq
           curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /var/jenkins_home/bin
           """
       } // end steps
